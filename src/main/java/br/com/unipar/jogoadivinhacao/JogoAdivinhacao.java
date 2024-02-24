@@ -1,4 +1,4 @@
-package br.com.unipar.frameworks.jogoadivinhacao;
+package br.com.unipar.jogoadivinhacao;
 
 public class JogoAdivinhacao {
 
