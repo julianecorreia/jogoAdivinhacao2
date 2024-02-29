@@ -162,7 +162,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_textNota3FocusLost
 
     private void textNota4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textNota4FocusLost
-        vetor[3] = Double.parseDouble(textNota4.getText());
+        vetor[3] = Double.parseDouble(textNota4.getText()); 
     }//GEN-LAST:event_textNota4FocusLost
 
     /**
