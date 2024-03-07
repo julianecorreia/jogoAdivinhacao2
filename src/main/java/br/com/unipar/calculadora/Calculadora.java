@@ -1,7 +1,9 @@
 
 package br.com.unipar.calculadora;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class Calculadora extends javax.swing.JFrame {
@@ -37,6 +39,7 @@ public class Calculadora extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
+        setBackground(new java.awt.Color(153, 153, 0));
         setResizable(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -77,6 +80,11 @@ public class Calculadora extends javax.swing.JFrame {
                 textNota4FocusLost(evt);
             }
         });
+        textNota4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textNota4KeyReleased(evt);
+            }
+        });
 
         buttonCalcularMedia.setText("Calcular Média");
         buttonCalcularMedia.setToolTipText("");
@@ -111,7 +119,7 @@ public class Calculadora extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(textNota4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 75, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -139,7 +147,7 @@ public class Calculadora extends javax.swing.JFrame {
                         .addComponent(textNota4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonCalcularMedia)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,6 +172,13 @@ public class Calculadora extends javax.swing.JFrame {
     private void textNota4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textNota4FocusLost
         vetor[3] = Double.parseDouble(textNota4.getText()); 
     }//GEN-LAST:event_textNota4FocusLost
+
+    private void textNota4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textNota4KeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            vetor[3] = Double.parseDouble(textNota4.getText()); 
+            calcularMedia();
+        }
+    }//GEN-LAST:event_textNota4KeyReleased
 
     /**
      * @param args the command line arguments
@@ -195,10 +210,13 @@ public class Calculadora extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+            //  Calculadora().setVisible(true);
+            
                 Calculadora calculadora = new Calculadora();
                 calculadora.setVisible(true);
                 calculadora.setLocationRelativeTo(null);
-//                calculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                calculadora.setDefaultCloseOperation(
+                        JFrame.EXIT_ON_CLOSE);
             }
         });
     }
@@ -217,9 +235,11 @@ public class Calculadora extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void calcularMedia() {
+       Double media = 
+               (vetor[0] + vetor[1] + vetor[2] + vetor[3]) / 4;
+       
+        JOptionPane.showMessageDialog(null,
+                "A média é: " + media);
         
-        for (int i = 0; i < 4; i++) {
-            
-        }
     }
 }
