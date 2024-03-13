@@ -4,6 +4,8 @@
  */
 package br.com.unipar.jogoadivinhacao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juliane
@@ -27,29 +29,54 @@ public class Panel1 extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        botaoNao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        botaoSim = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 51, 153));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 153));
 
-        jLabel1.setText("Hello World");
+        botaoNao.setText("Não");
+        botaoNao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNaoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Sou Legal?");
+
+        botaoSim.setText("Sim");
+        botaoSim.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoSimMouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel1)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(botaoSim, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(botaoNao, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoNao)
+                    .addComponent(botaoSim))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -64,8 +91,20 @@ public class Panel1 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoSimMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSimMouseEntered
+        int x = (int) (Math.random() * (getWidth() - botaoSim.getWidth())); // Nova posição x aleatória
+        int y = (int) (Math.random() * (getHeight() - botaoSim.getHeight())); // Nova posição y aleatória
+        botaoSim.setLocation(x, y); // Define a nova posição do botão
+    }//GEN-LAST:event_botaoSimMouseEntered
+
+    private void botaoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNaoActionPerformed
+        JOptionPane.showMessageDialog(jPanel1, "Eu sabia!");
+    }//GEN-LAST:event_botaoNaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoNao;
+    private javax.swing.JButton botaoSim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
