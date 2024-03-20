@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package br.com.unipar.jogoadivinhacao;
+package br.com.unipar.desktop.view.panels;
 
 /**
  *
  * @author Juliane
  */
-public class TextDemo extends javax.swing.JPanel {
+public class DinamicaIntrodutoria extends javax.swing.JPanel {
 
     /**
      * Creates new form Panel2
      */
-    public TextDemo() {
+    public DinamicaIntrodutoria() {
         initComponents();
         setVisible(true);
     }
@@ -29,18 +29,18 @@ public class TextDemo extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 102, 204));
+        setBackground(new java.awt.Color(255, 0, 0));
 
-        jLabel1.setText("Exercício Text Demo");
+        jLabel1.setText("Dinâmica Introdutória (Jogo da Adivinhação)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

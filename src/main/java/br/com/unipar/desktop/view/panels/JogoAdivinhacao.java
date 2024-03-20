@@ -1,4 +1,4 @@
-package br.com.unipar.jogoadivinhacao;
+package br.com.unipar.desktop.view.panels;
 
 import javax.swing.JOptionPane;
 

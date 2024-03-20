@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package br.com.unipar.jogoadivinhacao;
+package br.com.unipar.desktop.view.panels;
 
 import javax.swing.JOptionPane;
 

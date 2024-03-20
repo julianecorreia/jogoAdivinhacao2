@@ -1,5 +1,11 @@
-package br.com.unipar.jogoadivinhacao;
+package br.com.unipar.desktop.view;
 
+import br.com.unipar.desktop.view.panels.TextDemo;
+import br.com.unipar.desktop.view.panels.EventosMouseTeclado;
+import br.com.unipar.desktop.view.panels.CalcularMedia;
+import br.com.unipar.desktop.view.panels.DinamicaIntrodutoria;
+import br.com.unipar.desktop.view.panels.CadastrarClientePanel;
+import br.com.unipar.desktop.view.panels.ListarClienteFrame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -128,6 +134,11 @@ public class Menu extends JFrame {
         cadastrarCliente.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 abrirPanel(panelCadastrarCliente);
+            }
+        });
+        listarCliente.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ListarClienteFrame().setVisible(true);
             }
         });
 

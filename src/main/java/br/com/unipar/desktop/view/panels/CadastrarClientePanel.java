@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package br.com.unipar.jogoadivinhacao;
+package br.com.unipar.desktop.view.panels;
 
 /**
  *
@@ -246,7 +246,7 @@ public class CadastrarClientePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_textCepActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar2ActionPerformed
@@ -280,4 +280,8 @@ public class CadastrarClientePanel extends javax.swing.JPanel {
     private javax.swing.JTextField textNome;
     private javax.swing.JTextField textTelefone;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        this.removeAll();
+    }
 }
