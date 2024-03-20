@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author Juliane
  */
-public class Panel1 extends javax.swing.JPanel {
+public class EventosMouseTeclado extends javax.swing.JPanel {
 
     /**
      * Creates new form Panel1
      */
-    public Panel1() {
+    public EventosMouseTeclado() {
         initComponents();
     }
 
@@ -32,6 +32,7 @@ public class Panel1 extends javax.swing.JPanel {
         botaoNao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         botaoSim = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 51, 153));
 
@@ -55,6 +56,9 @@ public class Panel1 extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Dinâmica Introdutóra (Jogo da Adivinhação)");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -66,6 +70,10 @@ public class Panel1 extends javax.swing.JPanel {
                 .addComponent(botaoNao, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +84,9 @@ public class Panel1 extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoNao)
                     .addComponent(botaoSim))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(58, 58, 58))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -106,6 +116,7 @@ public class Panel1 extends javax.swing.JPanel {
     private javax.swing.JButton botaoNao;
     private javax.swing.JButton botaoSim;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

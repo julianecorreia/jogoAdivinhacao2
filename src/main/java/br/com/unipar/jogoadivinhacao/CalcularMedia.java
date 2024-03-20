@@ -8,12 +8,12 @@ package br.com.unipar.jogoadivinhacao;
  *
  * @author Juliane
  */
-public class Panel2 extends javax.swing.JPanel {
+public class CalcularMedia extends javax.swing.JPanel {
 
     /**
      * Creates new form Panel2
      */
-    public Panel2() {
+    public CalcularMedia() {
         initComponents();
         setVisible(true);
     }
@@ -29,25 +29,25 @@ public class Panel2 extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 102, 204));
+        setBackground(new java.awt.Color(102, 102, 0));
 
-        jLabel1.setText("Hello");
+        jLabel1.setText("Calcular Média");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(139, 139, 139)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
