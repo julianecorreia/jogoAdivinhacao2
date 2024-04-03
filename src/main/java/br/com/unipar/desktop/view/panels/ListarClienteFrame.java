@@ -1,6 +1,9 @@
 package br.com.unipar.desktop.view.panels;
 
+import br.com.unipar.desktop.dao.ClienteDAO;
+import br.com.unipar.desktop.dao.ClienteDAOImpl;
 import br.com.unipar.desktop.model.Cliente;
+import br.com.unipar.desktop.util.EntityManagerUtil;
 import br.com.unipar.desktop.view.tablemodels.ClienteTableModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -134,6 +137,11 @@ public class ListarClienteFrame extends javax.swing.JFrame {
 
     private void atualizarLista() {
         List<Cliente> listaClientes = new ArrayList<>();
+        
+        ClienteDAO clienteDAO = new 
+            ClienteDAOImpl(EntityManagerUtil.getManager());
+        
+        listaClientes.addAll(clienteDAO.findAll());
         
         ClienteTableModel model = 
                 new ClienteTableModel(listaClientes);

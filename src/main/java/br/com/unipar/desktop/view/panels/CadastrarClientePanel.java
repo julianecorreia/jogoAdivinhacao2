@@ -4,6 +4,12 @@
  */
 package br.com.unipar.desktop.view.panels;
 
+import br.com.unipar.desktop.dao.ClienteDAO;
+import br.com.unipar.desktop.dao.ClienteDAOImpl;
+import br.com.unipar.desktop.model.Cliente;
+import br.com.unipar.desktop.util.EntityManagerUtil;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juliane
@@ -189,7 +195,7 @@ public class CadastrarClientePanel extends javax.swing.JPanel {
         btnSalvar2.setText("Salvar");
         btnSalvar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvar2ActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
@@ -249,9 +255,26 @@ public class CadastrarClientePanel extends javax.swing.JPanel {
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void btnSalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalvar2ActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        Cliente novoCliente = new Cliente();
+        
+        novoCliente.setAtivo(checkAtivo.isSelected());
+        novoCliente.setNome(textNome.getText());
+        novoCliente.setTelefone(textTelefone.getText());
+        novoCliente.setCpf(textCPF.getText());
+        novoCliente.setCep(textCep.getText());
+        novoCliente.setEndereco(textEndereco.getText());
+
+        ClienteDAO clienteDAO = 
+                new ClienteDAOImpl(EntityManagerUtil.getManager());
+        
+        novoCliente = clienteDAO.save(novoCliente);
+        
+        JOptionPane.showMessageDialog(null, "Cliente " +
+                novoCliente.getId() + " salvo com sucesso!");
+        
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void checkAtivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAtivoActionPerformed
         // TODO add your handling code here:
