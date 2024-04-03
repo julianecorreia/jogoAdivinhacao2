@@ -1,8 +1,19 @@
 package br.com.unipar.desktop.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+@Entity
 public class Cliente {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String cpf;
@@ -12,6 +23,9 @@ public class Cliente {
     
     private String cep;
     private String endereco;
+    
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+//    private List<Endereco> endereco;
 
     public Integer getId() {
         return id;

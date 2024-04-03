@@ -1,5 +1,6 @@
 package br.com.unipar.desktop.view;
 
+import br.com.unipar.desktop.util.EntityManagerUtil;
 import br.com.unipar.desktop.view.panels.TextDemo;
 import br.com.unipar.desktop.view.panels.EventosMouseTeclado;
 import br.com.unipar.desktop.view.panels.CalcularMedia;
@@ -156,9 +157,18 @@ public class Menu extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
+                EntityManagerUtil.getEntityManagerFactory();
                 Menu menu = new Menu();
                 menu.setVisible(true);
             }
         });
     }
+
+    @Override
+    public void dispose() {
+        EntityManagerUtil.closeEntityManagerFactory();
+        super.dispose(); 
+    }
+    
+    
 }
